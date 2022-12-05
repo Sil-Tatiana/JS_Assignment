@@ -1,12 +1,14 @@
 function userPlay() {
   let promptText = "Choose: Rock, Paper or Scissors";
-  let userInput = prompt(promptText).toLowerCase();
+  let userInput = prompt(promptText).trim().toLowerCase();
   while (
     userInput !== "rock" &&
     userInput !== "paper" &&
     userInput !== "scissors"
   ) {
-    userInput = prompt("Incorrect option\n" + promptText).toLowerCase();
+    userInput = prompt("Incorrect option\n" + promptText)
+      .trim()
+      .toLowerCase();
   }
   return userInput;
 }
