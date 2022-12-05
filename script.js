@@ -1,6 +1,17 @@
+const welcomeMessage = alert(
+  "Welcome to Rock✊, Paper🖐 & Scissors✌️ Game!\n Press OK to PLAY!"
+);
+
 function userPlay() {
   let promptText = "Choose: Rock, Paper or Scissors";
   let userInput = prompt(promptText).trim().toLowerCase();
+  if (userInput === null) {
+    if (confirm("Are you sure you want to QUIT?")) {
+      return userInput;
+    } else {
+      userInput = prompt(promptText).trim().toLowerCase();
+    }
+  }
   while (
     userInput !== "rock" &&
     userInput !== "paper" &&
